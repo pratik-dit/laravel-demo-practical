@@ -27,6 +27,6 @@
         </div>
 
         <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
-
+        <a href="{{ route('forgotpassword.show') }}" class="text-muted float-end"><small>Forgot your password?</small></a>
     </form>
 @endsection
