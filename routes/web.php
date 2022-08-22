@@ -46,5 +46,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          * Logout Routes
          */
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+        /**
+         * Products Routes
+         */
+        Route::group(['prefix' => 'products'], function () {
+            $ctrl = "ProductController";
+            Route::get('/', "{$ctrl}@index")->name('products.list');
+        });
     });
 });
