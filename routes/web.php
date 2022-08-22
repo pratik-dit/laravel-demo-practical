@@ -50,8 +50,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          * Products Routes
          */
         Route::group(['prefix' => 'products'], function () {
-            $ctrl = "ProductController";
-            Route::get('/', "{$ctrl}@index")->name('products.list');
+            Route::get('/', 'ProductController@index')->name('products.list');
+            Route::get('/{id}/edit', 'ProductController@edit');
+            Route::post('/store', 'ProductController@store');
+            Route::get('/delete/{id}', 'ProductController@destroy');
         });
     });
 });
